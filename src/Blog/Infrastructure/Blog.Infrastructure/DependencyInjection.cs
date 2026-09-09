@@ -1,6 +1,7 @@
 ﻿using Blog.Application.Interfaces;
 using Blog.Infrastructure.Data.Configurations;
 using Blog.Infrastructure.Data.Repositories;
+using Blog.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -42,6 +43,7 @@ namespace Blog.Infrastructure
 
             // ۵. تزریق انبار داده (Repository) به قرارداد (Interface)
             services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IArticleQueryService, ArticleQueryService>();
 
             return services;
         }
