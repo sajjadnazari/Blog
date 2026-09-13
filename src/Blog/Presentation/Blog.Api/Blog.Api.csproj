@@ -8,10 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="MassTransit.RabbitMQ" Version="9.2.1" />
-    <PackageReference Include="Mediator.SourceGenerator" Version="3.0.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
   </ItemGroup>
 

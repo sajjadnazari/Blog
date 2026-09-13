@@ -1,5 +1,6 @@
 ﻿using Blog.Api.Consumers;
 using Blog.Infrastructure;
+using Blog.Application;
 using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,12 +11,9 @@ builder.Services.AddSwaggerGen();
 
 // ۱. تزریق تنظیمات لایه زیرساخت (MongoDB)
 builder.Services.AddMongoInfrastructure(builder.Configuration);
-
+builder.Services.AddApplication(builder.Configuration);
 // ۲. راه‌اندازی MediatR با معرفی اسمبلی لایه Application
-builder.Services.AddMediator(options =>
-{
-    options.ServiceLifetime = ServiceLifetime.Scoped;
-});
+
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<BusinessCreatedConsumer>(); // معرفی گیرنده
